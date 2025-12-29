@@ -303,7 +303,7 @@ fun_KM_estimate <- function(forweights_all, StudyInterest, WeightsToKeep = c("We
   
   keep <- c("Weights_FullCohort","Weights_Selectable","WeightsGAM_WithTek","WeightsKM")
   labels_keep <- c("Originating Cohort","Eligible","GAM-Weights","KM-Weights")
-  lt          <- c("solid","longdash","dashed","dotted")
+  lt          <- c("solid","longdash","dotted","dotdash")
   cols <- c("#F8766D", "#7CAE00", "#007C80", "#C77CFF")
 
   cohort_plot <- droplevels(cohort_all[cohort_all$TypeAnalysis %in% keep, ])
