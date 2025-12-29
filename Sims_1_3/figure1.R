@@ -2,8 +2,12 @@ library(tidyverse)
 library(survival)
 library(survminer)
 
-setwd("/home/PERSONALE/tomeu.lopeznieto/wncc_sims/Sims_1_3/")
-source("/home/PERSONALE/tomeu.lopeznieto/wncc_sims/Sims_1_3/RFunctions/Functions_Analysis_EPIC_Biocrates.R")
+ROOT <- Sys.getenv("WNCC_ROOT")
+stopifnot(nzchar(ROOT))
+
+setwd(file.path(ROOT, "wncc_sims", "Sims_1_3"))
+
+source("/RFunctions/Functions_Analysis_EPIC_Biocrates.R")
 
 StudyInterest  <- "MB_CORU_01"
 comp_res  <- readRDS(

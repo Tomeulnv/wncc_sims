@@ -7,7 +7,11 @@ library(ggplot2)
 library(ggh4x)
 
 # --- SET WORKING DIRECTORY ---
-setwd("/home/PERSONALE/tomeu.lopeznieto/wNCC/Res")
+ROOT <- Sys.getenv("WNCC_ROOT")
+stopifnot(nzchar(ROOT))
+
+dir.create(file.path(ROOT, "Res"), showWarnings = FALSE, recursive = TRUE)
+setwd(file.path(ROOT, "Res"))
 
 # --- HELPER FUNCTION ---
 remove_first_bit <- Vectorize(function(char) {

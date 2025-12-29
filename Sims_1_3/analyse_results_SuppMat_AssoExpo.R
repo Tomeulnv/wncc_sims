@@ -1,7 +1,9 @@
 rm(list=ls())
 
+ROOT <- Sys.getenv("Epic_simulations")
+stopifnot(nzchar(ROOT))
 
-setwd("/data/Epic/subprojects/BiocratesGWAS/work/WeightedNCC_Final/Simulations/")
+setwd(ROOT)
 
 library(tidyverse)
 library(ggplot2)

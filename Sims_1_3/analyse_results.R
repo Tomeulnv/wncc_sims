@@ -2,7 +2,10 @@ rm(list = ls())
 library(tidyverse)
 library(ggplot2)
 
-setwd("/home/PERSONALE/tomeu.lopeznieto/wncc_sims/Sims_1_3")
+ROOT <- Sys.getenv("WNCC_ROOT")
+stopifnot(nzchar(ROOT))
+
+setwd(file.path(ROOT, "wncc_sims", "Sims_1_3"))
 
 ##### Plots comparing GAM and Weights in the NN matching case
 oo <- readRDS("./Res/Data_test_Sim_1_3_CohortSize_1e+05_MAF_0.25_R2SNPBMI_0.1_logHRSNP_0.69_logHRBMI_0.69_logHRMatching_0.69_pselCases_1_ageCens_20_50_NNmatching_1_AssoMsnp_1.rds")
